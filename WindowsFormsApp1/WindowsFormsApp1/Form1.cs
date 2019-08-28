@@ -21,6 +21,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        Classes.ClsSuma objt = new Classes.ClsSuma();
+        Classes.ClsResta objt1 = new Classes.ClsResta();
+        Classes.ClsMultiplicacion objt2 = new Classes.ClsMultiplicacion();
+        Classes.ClsDivision objt3 = new Classes.ClsDivision();
+        Classes.ClsPorcentaje objt4 = new Classes.ClsPorcentaje();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -132,7 +137,23 @@ namespace WindowsFormsApp1
 
         private void BttnIgual_Click(object sender, EventArgs e)
         {
+            segundo = double.Parse(TxtPantalla.Text);
+            double Sum;
+            double Res;
+            double Mul;
+            double Div;
+            double Por;
 
+            switch(operador)
+            {
+                case "+":
+                    Sum = objt.Suma((primero)(segundo));
+                    TxtPantalla.Text = Sum.ToString();
+                    break;
+            }
         }
+
+
+        
     }
 }
