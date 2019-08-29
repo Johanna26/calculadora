@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
 
-        double primero;
+        double first;
         double segundo;
         string operador;
 
@@ -85,35 +85,35 @@ namespace WindowsFormsApp1
         private void BttnSuma_Click(object sender, EventArgs e)
         {
             operador =  "+";
-            primero = double.Parse(TxtPantalla.Text);
+            first = double.Parse(TxtPantalla.Text);
             TxtPantalla.Clear();
         }
 
         private void BttnResta_Click(object sender, EventArgs e)
         {
             operador = "-";
-            primero = double.Parse(TxtPantalla.Text);
+            first = double.Parse(TxtPantalla.Text);
             TxtPantalla.Clear();
         }
 
         private void BttnMultiplicacion_Click(object sender, EventArgs e)
         {
             operador = "*";
-            primero = double.Parse(TxtPantalla.Text);
+            first = double.Parse(TxtPantalla.Text);
             TxtPantalla.Clear();
         }
 
         private void BttnDiision_Click(object sender, EventArgs e)
         {
             operador = "/";
-            primero = double.Parse(TxtPantalla.Text);
+            first = double.Parse(TxtPantalla.Text);
             TxtPantalla.Clear();
         }
 
         private void BttnPorcentaje_Click(object sender, EventArgs e)
         {
             operador = "%";
-            primero = double.Parse(TxtPantalla.Text);
+            first = double.Parse(TxtPantalla.Text);
             TxtPantalla.Clear();
         }
 
@@ -147,8 +147,28 @@ namespace WindowsFormsApp1
             switch(operador)
             {
                 case "+":
-                    Sum = objt.Suma((primero)(segundo));
+                    Sum = objt.Suma((first),(segundo));
                     TxtPantalla.Text = Sum.ToString();
+                    break;
+
+                case "-":
+                    Res = objt1.Resta((first), (segundo));
+                    TxtPantalla.Text = Res.ToString();
+                    break;
+
+                case "*":
+                    Mul = objt2.Multiplicacion((first), (segundo));
+                    TxtPantalla.Text = Mul.ToString();
+                    break;
+
+                case "/":
+                    Div = objt3.Division((first), (segundo));
+                    TxtPantalla.Text = Div.ToString();
+                    break;
+
+                case "%":
+                    Por = objt4.Porcentaje((first), (segundo));
+                    TxtPantalla.Text = Por.ToString();
                     break;
             }
         }
